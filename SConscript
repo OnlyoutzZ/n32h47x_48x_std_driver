@@ -15,6 +15,7 @@ os.path.join(src_path, 'n32h47x_48x_pwr.c'),
 os.path.join(src_path, 'n32h47x_48x_rcc.c'),
 os.path.join(src_path, 'n32h47x_48x_dbg.c'),
 os.path.join(src_path, 'n32h47x_48x_exti.c'),
+os.path.join(src_path, 'n32h47x_48x_flash.c'),
 ]
 
 if GetDepend(['RT_USING_SERIAL']) or GetDepend(['RT_USING_NANO', 'RT_USING_CONSOLE']):
@@ -52,9 +53,6 @@ if GetDepend(['BSP_USING_LPTIM']):
 
 if GetDepend(['RT_USING_RTC']):
     src += [os.path.join(src_path, 'n32h47x_48x_rtc.c')]
-
-if GetDepend(['BSP_USING_ON_CHIP_FLASH']):
-    src += [os.path.join(src_path, 'n32h47x_48x_flash.c')]
 
 if GetDepend(['RT_USING_WDT']):
     src += [os.path.join(src_path, 'n32h47x_48x_iwdg.c')]
